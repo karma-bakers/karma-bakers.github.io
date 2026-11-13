@@ -945,6 +945,7 @@ function bootKarmaWala() {
   if (typeof Checkout !== 'undefined' && Checkout.init) Checkout.init();
   if (typeof App !== 'undefined' && App.init) App.init();
   if (typeof VisitorCounter !== 'undefined' && VisitorCounter.init) VisitorCounter.init();
+  if (typeof MusicPlayer !== 'undefined' && MusicPlayer.init) MusicPlayer.init();
 }
 
 if (document.readyState === 'loading') {

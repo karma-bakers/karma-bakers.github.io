@@ -134,6 +134,11 @@
           </svg>
         </a>
 
+        <!-- Ambient Music Toggle Button -->
+        <button type="button" class="header-icon-btn music-toggle-btn" id="headerMusicToggle" title="Play Ambient Bakery Music" aria-label="Toggle ambient bakery music">
+          🎵
+        </button>
+
         <!-- Shopping Cart Icon with Live Badge -->
         <button type="button" class="header-icon-btn cart-drawer-trigger" title="View Cart" aria-label="Shopping Cart">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -866,6 +871,23 @@
   </div>
 
   <!-- ==========================================================================
+       BACKGROUND MUSIC PLAYER
+       ========================================================================== -->
+  <audio id="bgAudioElement" src="assets/audio/karma.mp3" loop preload="auto"></audio>
+
+  <aside class="bg-music-widget" id="bgMusicWidget" role="region" aria-label="Background Music Control" title="Click to Play Ambient Music">
+    <div class="bg-music-icon-wrap">
+      <div class="equalizer-bars">
+        <span class="equalizer-bar"></span>
+        <span class="equalizer-bar"></span>
+        <span class="equalizer-bar"></span>
+        <span class="equalizer-bar"></span>
+      </div>
+    </div>
+    <span id="bgMusicStatusText">Play Background Music</span>
+  </aside>
+
+  <!-- ==========================================================================
        TOAST NOTIFICATION
        ========================================================================== -->
   <div class="app-toast" id="appToast" role="status" aria-live="polite">
@@ -882,6 +904,7 @@
   <script src="assets/js/cart.js"></script>
   <script src="assets/js/checkout.js"></script>
   <script src="assets/js/visitor-counter.js"></script>
+  <script src="assets/js/music.js"></script>
   <script src="assets/js/app.js"></script>
 
 </body>
