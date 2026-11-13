@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+  <title>Karma Wala Sweets And Bakers | Premium Pakistani Bakery, Fresh Cakes &amp; Traditional Mithai</title>
+  <meta name="description" content="Karma Wala Sweets And Bakers - Authentic Pakistani bakery, custom birthday cakes, pure desi ghee traditional mithai, crispy chicken patties, fresh breads &amp; weekend Halwa Puri. Order fresh on WhatsApp +923327512031." />
+  <meta name="keywords" content="Karma Wala Sweets And Bakers, bakery Pakistan, mithai, birthday cakes, chicken patties, gulab jamun, halwa puri, fresh bread, bakery delivery, WhatsApp bakery order" />
+  <meta name="author" content="Karma Wala Sweets And Bakers" />
+  <meta name="theme-color" content="#8B151B" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Karma Wala Sweets And Bakers | Premium Pakistani Bakery &amp; Mithai" />
+  <meta property="og:description" content="Freshly Baked. Beautifully Made. Discover Delicious Cakes, Fresh Bakery Items &amp; Traditional Pakistani Mithai. Fast WhatsApp ordering." />
+  <meta property="og:image" content="assets/images/logo/logo.png" />
+  <meta property="og:site_name" content="Karma Wala Sweets And Bakers" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Karma Wala Sweets And Bakers" />
+  <meta name="twitter:description" content="Discover Delicious Cakes, Fresh Bakery Items &amp; Traditional Pakistani Mithai. Order directly on WhatsApp: +923327512031." />
+  <meta name="twitter:image" content="assets/images/logo/logo.png" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/logo/favicon.svg" />
+  <link rel="apple-touch-icon" href="assets/images/logo/logo.png" />
+
+  <!-- Preconnect to Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,600&display=swap" rel="stylesheet" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+
+  <!-- Structured Data JSON-LD (Schema.org / Bakery) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Bakery",
+    "name": "Karma Wala Sweets And Bakers",
+    "image": "assets/images/logo/logo.png",
+    "description": "Authentic Pakistani bakery, custom celebration cakes, pure desi ghee traditional mithai, crispy savory bakery snacks, and fresh breads.",
+    "telephone": "+923327512031",
+    "priceRange": "Price on Request",
+    "currenciesAccepted": "PKR",
+    "paymentAccepted": "Cash, JazzCash, Easypaisa, Bank Transfer",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "PK"
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+          "Sunday"
+        ],
+        "opens": "07:00",
+        "closes": "23:30"
+      }
+    ],
+    "servesCuisine": "Pakistani Bakery & Confectionery",
+    "hasMenu": "#catalogSection"
+  }
+  </script>
+</head>
+<body id="home">
+
+  <!-- ==========================================================================
+       TOP ANNOUNCEMENT BAR
+       ========================================================================== -->
+  <aside class="top-bar" aria-label="Announcement">
+    <div class="container top-bar-inner">
+      <div class="top-bar-notice">
+        <span>✨ <strong>Freshness, Quality &amp; Taste in Every Bite</strong> — Fresh batches baked daily!</span>
+      </div>
+      <div class="top-bar-links">
+        <a href="tel:+923327512031" class="top-bar-item" title="Call Us">
+          <span>📞 +92 332 7512031</span>
+        </a>
+        <span class="top-bar-item">
+          <span>⏰ 7:00 AM – 11:30 PM PKT</span>
+        </span>
+        <a href="https://wa.me/923327512031" target="_blank" rel="noopener" class="top-bar-item" title="WhatsApp Order">
+          <span>💬 Order on WhatsApp</span>
+        </a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ==========================================================================
+       STICKY HEADER & NAVIGATION
+       ========================================================================== -->
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      
+      <!-- Brand Logo & Name -->
+      <a href="#home" class="brand-logo-wrap" aria-label="Karma Wala Sweets And Bakers Home">
+        <img src="assets/images/logo/logo.png" alt="Karma Wala Sweets And Bakers Logo" class="brand-logo-img" />
+        <div class="brand-name-group">
+          <span class="brand-title">Karma Wala</span>
+          <span class="brand-subtitle">Sweets &amp; Bakers</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="desktop-nav" role="navigation" aria-label="Main Navigation">
+        <a href="#home" class="nav-link active">Home</a>
+        <a href="#catalogSection" class="nav-link" onclick="App.setCategory('all')">All Products</a>
+        <a href="#catalogSection" class="nav-link" data-category="bakery" onclick="App.filterCategoryAndScroll('bakery')">Bakery Items</a>
+        <a href="#catalogSection" class="nav-link" data-category="cakes" onclick="App.filterCategoryAndScroll('cakes')">Cakes</a>
+        <a href="#catalogSection" class="nav-link" data-category="mithai" onclick="App.filterCategoryAndScroll('mithai')">Mithai</a>
+        <a href="#catalogSection" class="nav-link" data-category="biscuits" onclick="App.filterCategoryAndScroll('biscuits')">Biscuits</a>
+        <a href="#catalogSection" class="nav-link" data-category="bread" onclick="App.filterCategoryAndScroll('bread')">Bread</a>
+        <a href="#contactSection" class="nav-link">Contact Us</a>
+      </nav>
+
+      <!-- Header Actions -->
+      <div class="header-actions">
+        <!-- Search Button (Focuses Search Input) -->
+        <a href="#catalogSection" class="header-icon-btn" onclick="document.getElementById('productSearchInput')?.focus()" title="Search products" aria-label="Search products">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </a>
+
+        <!-- Shopping Cart Icon with Live Badge -->
+        <button type="button" class="header-icon-btn cart-drawer-trigger" title="View Cart" aria-label="Shopping Cart">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <path d="M16 10a4 4 0 0 1-8 0"></path>
+          </svg>
+          <span class="cart-badge-count" aria-live="polite">0</span>
+        </button>
+
+        <!-- WhatsApp Ordering Button -->
+        <a href="https://wa.me/923327512031" target="_blank" rel="noopener" class="btn btn-whatsapp header-wa-btn" title="Order directly on WhatsApp">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.669-.699c.969.586 1.861.948 3.123.948 3.181 0 5.767-2.586 5.768-5.766 0-3.18-2.586-5.766-5.768-5.766zm9.969 5.766c0 5.519-4.481 10-10 10-1.802 0-3.528-.485-5.045-1.341l-6.955 1.82 1.854-6.777c-.966-1.583-1.5-3.432-1.5-5.362 0-5.519 4.481-10 10-10s10 4.481 10 10z"/>
+          </svg>
+          <span>Order on WhatsApp</span>
+        </a>
+
+        <!-- Mobile Hamburger Menu Button -->
+        <button type="button" class="header-icon-btn mobile-menu-toggle" id="mobileMenuToggle" title="Open navigation menu" aria-label="Open navigation menu">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       MOBILE NAVIGATION DRAWER
+       ========================================================================== -->
+  <aside class="mobile-nav-drawer" id="mobileNavDrawer" aria-label="Mobile Navigation">
+    <div class="mobile-nav-header">
+      <div class="brand-logo-wrap">
+        <img src="assets/images/logo/logo.png" alt="Karma Wala Sweets And Bakers" class="brand-logo-img" style="height: 44px;" />
+        <span class="brand-title" style="font-size: 1.15rem;">Karma Wala</span>
+      </div>
+      <button type="button" class="modal-close-btn" id="mobileNavClose" title="Close navigation menu" aria-label="Close navigation menu">✕</button>
+    </div>
+    <nav class="mobile-nav-body">
+      <a href="#home" class="mobile-nav-link">🏠 Home</a>
+      <a href="#catalogSection" class="mobile-nav-link" onclick="App.setCategory('all')">✨ All Products</a>
+      <a href="#catalogSection" class="mobile-nav-link" onclick="App.filterCategoryAndScroll('bakery')">🥐 Fast-Selling Bakery Items</a>
+      <a href="#catalogSection" class="mobile-nav-link" onclick="App.filterCategoryAndScroll('cakes')">🎂 Cakes &amp; Pastries</a>
+      <a href="#catalogSection" class="mobile-nav-link" onclick="App.filterCategoryAndScroll('mithai')">🍯 Traditional Mithai</a>
+      <a href="#catalogSection" class="mobile-nav-link" onclick="App.filterCategoryAndScroll('biscuits')">🍪 Biscuits &amp; Cookies</a>
+      <a href="#catalogSection" class="mobile-nav-link" onclick="App.filterCategoryAndScroll('bread')">🍞 Bread &amp; Breakfast</a>
+      <a href="#catalogSection" class="mobile-nav-link" onclick="App.filterCategoryAndScroll('other')">🧁 Other Popular Products</a>
+      <a href="#catalogSection" class="mobile-nav-link" onclick="App.filterCategoryAndScroll('weekend')">🍳 Halwa Puri (Weekend Special)</a>
+      <a href="#aboutSection" class="mobile-nav-link">📖 About Our Bakery</a>
+      <a href="#contactSection" class="mobile-nav-link">📍 Contact &amp; Location</a>
+    </nav>
+    <div class="mobile-nav-footer">
+      <a href="https://wa.me/923327512031" target="_blank" rel="noopener" class="btn btn-whatsapp btn-block">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.669-.699c.969.586 1.861.948 3.123.948 3.181 0 5.767-2.586 5.768-5.766 0-3.18-2.586-5.766-5.768-5.766zm9.969 5.766c0 5.519-4.481 10-10 10-1.802 0-3.528-.485-5.045-1.341l-6.955 1.82 1.854-6.777c-.966-1.583-1.5-3.432-1.5-5.362 0-5.519 4.481-10 10-10s10 4.481 10 10z"/>
+        </svg>
+        WhatsApp Order: +923327512031
+      </a>
+    </div>
+  </aside>
+
+  <!-- ==========================================================================
+       MAIN HERO BANNER WITH AUTOMATIC PRODUCT SLIDER
+       ========================================================================== -->
+  <section class="hero-banner" aria-label="Featured Bakery Specialties">
+    <!-- Slider Track -->
+    <div class="hero-slider-track" id="heroSliderTrack">
+      <!-- Populated dynamically with actual images from Product Images via app.js -->
+    </div>
+
+    <!-- Previous and Next Navigation Arrows -->
+    <button type="button" class="hero-slider-nav hero-slider-prev" id="heroSliderPrev" aria-label="Previous featured item">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+        <polyline points="15 18 9 12 15 6"></polyline>
+      </svg>
+    </button>
+    <button type="button" class="hero-slider-nav hero-slider-next" id="heroSliderNext" aria-label="Next featured item">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+        <polyline points="9 18 15 12 9 6"></polyline>
+      </svg>
+    </button>
+
+    <!-- Slide Indicators (Dots) -->
+    <div class="hero-slider-dots" id="heroSliderDots" role="tablist" aria-label="Slide Selection"></div>
+  </section>
+
+  <!-- ==========================================================================
+       TRUST HIGHLIGHTS BAR
+       ========================================================================== -->
+  <section class="trust-bar" aria-label="Quality Guarantees">
+    <div class="container">
+      <div class="trust-grid">
+        <div class="trust-item">
+          <div class="trust-icon-box">🥐</div>
+          <div class="trust-text">
+            <h4>100% Halal &amp; Fresh</h4>
+            <p>Baked fresh daily with pure ingredients</p>
+          </div>
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon-box">🍯</div>
+          <div class="trust-text">
+            <h4>Pure Desi Ghee Mithai</h4>
+            <p>Authentic Pakistani traditional taste</p>
+          </div>
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon-box">🎂</div>
+          <div class="trust-text">
+            <h4>Custom Cake Studio</h4>
+            <p>Birthday, wedding &amp; anniversary specials</p>
+          </div>
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon-box">💬</div>
+          <div class="trust-text">
+            <h4>Fast WhatsApp Checkout</h4>
+            <p>Direct bakery ordering &amp; prompt delivery</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       WEEKEND BREAKFAST SPECIAL BANNER (HALWA PURI)
+       ========================================================================== -->
+  <section class="weekend-special-section" aria-label="Weekend Breakfast Special">
+    <div class="container">
+      <div class="weekend-banner-card" id="weekendSpecialBanner">
+        <div class="weekend-info-col">
+          <img src="assets/images/products/Halwa Puri.jpg" alt="Lahori Halwa Puri Fresh" class="weekend-puri-img" onerror="this.src='assets/images/products/placeholder.svg';" />
+          <div class="weekend-info-text">
+            <span class="weekend-status-badge" id="weekendStatusBadge">
+              <span class="pulse-dot"></span> Checking Availability...
+            </span>
+            <h3>Halwa Puri Fresh – Authentic Lahori Breakfast</h3>
+            <p id="weekendStatusDesc">Puffed hot puris served with spiced chana tarkari, suji halwa, and mixed pickle. Available Saturday &amp; Sunday only.</p>
+          </div>
+        </div>
+        <div class="weekend-cta-col">
+          <button type="button" class="btn btn-gold" onclick="App.openProductModal('weekend-halwa-puri-fresh')">
+            🍳 Order Halwa Puri
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       PRODUCT CATALOG, SEARCH & FILTERING SECTION
+       ========================================================================== -->
+  <section class="catalog-section" id="catalogSection" aria-label="Bakery Catalog">
+    <div class="container">
+
+      <!-- Section Title Header -->
+      <div class="section-header">
+        <span class="section-tag">Pure Delights &amp; Savory Bites</span>
+        <h2 class="section-title">Explore Our Fresh Bakery Menu</h2>
+        <p class="section-desc">Handcrafted cakes, crispy savory snacks, royal Pakistani mithai, oven-fresh breads, and tea-time biscuits prepared fresh daily.</p>
+      </div>
+
+      <!-- Advanced Search Bar & Controls -->
+      <div class="search-controls-bar">
+        <div class="search-input-row">
+          <div class="search-field-wrap">
+            <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <input 
+              type="text" 
+              id="productSearchInput" 
+              class="search-input" 
+              placeholder="Search cakes, chicken patties, gulab jamun, pizza, breads..." 
+              autocomplete="off"
+              aria-label="Search products by name or category"
+            />
+            <button type="button" id="searchClearBtn" class="search-clear-btn" title="Clear search" aria-label="Clear search">✕</button>
+          </div>
+
+          <!-- Sort Select -->
+          <div class="search-sort-wrap">
+            <label for="productSortSelect" class="sort-label">Sort by:</label>
+            <select id="productSortSelect" class="sort-select" aria-label="Sort product catalog">
+              <option value="popular" selected>Popular Products</option>
+              <option value="az">Alphabetical A – Z</option>
+              <option value="za">Alphabetical Z – A</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Trending Search Suggestion Tags -->
+        <div class="trending-searches-wrap">
+          <span class="trending-label">🔥 Trending:</span>
+          <button type="button" class="trending-pill" data-query="Birthday Cake">Birthday Cake</button>
+          <button type="button" class="trending-pill" data-query="Chocolate Cake">Chocolate Cake</button>
+          <button type="button" class="trending-pill" data-query="Chicken Patties">Chicken Patties</button>
+          <button type="button" class="trending-pill" data-query="Chicken Samosa">Chicken Samosa</button>
+          <button type="button" class="trending-pill" data-query="Fresh Cream Cake">Fresh Cream Cake</button>
+          <button type="button" class="trending-pill" data-query="Gulab Jamun">Gulab Jamun</button>
+          <button type="button" class="trending-pill" data-query="Pizza">Pizza</button>
+          <button type="button" class="trending-pill" data-query="Halwa Puri">Halwa Puri</button>
+        </div>
+      </div>
+
+      <!-- Category Filter Pills -->
+      <div class="category-tabs-scroll" role="tablist" aria-label="Product Categories">
+        <div class="category-tabs-track" id="categoryTabsContainer">
+          <!-- Populated from products.js -->
+        </div>
+      </div>
+
+      <!-- Catalog Meta Counter -->
+      <div class="catalog-meta-row">
+        <span id="catalogResultCount">Loading bakery catalog...</span>
+        <span>All products baked fresh with high-grade ingredients</span>
+      </div>
+
+      <!-- Products Grid -->
+      <div class="product-grid" id="productGrid" role="region" aria-live="polite">
+        <!-- Rendered dynamically by app.js -->
+      </div>
+
+      <!-- Empty State for Search -->
+      <div class="products-empty-state hidden" id="productsEmptyState">
+        <div class="empty-icon">🔍</div>
+        <h3 class="empty-title">No Bakery Items Found</h3>
+        <p class="empty-desc">We couldn't find any products matching your search term. Try searching for "Cakes", "Patties", "Barfi", or explore all products below.</p>
+        <button type="button" class="btn btn-primary" onclick="document.getElementById('searchClearBtn').click()">
+          View All Products
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       RECENTLY VIEWED PRODUCTS SECTION
+       ========================================================================== -->
+  <section class="recently-viewed-section hidden" id="recentlyViewedSection" aria-label="Recently Viewed Products">
+    <div class="container">
+      <h3 class="recent-title">Recently Viewed Treats</h3>
+      <div class="recently-viewed-grid" id="recentlyViewedGrid">
+        <!-- Populated dynamically via localStorage -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       BRAND STORY / ABOUT SECTION
+       ========================================================================== -->
+  <section class="about-section" id="aboutSection" aria-label="About Karma Wala Sweets And Bakers">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-img-wrap">
+          <img src="assets/images/products/Chicken Bread.jpg" alt="Artisan fresh baked bread at Karma Wala" class="about-img" onerror="this.src='assets/images/products/placeholder.svg';" />
+          <div class="about-badge-card">
+            <strong>Freshly Baked Every Day</strong>
+            <span>Pure Desi Ghee &amp; Dairy Goodness</span>
+          </div>
+        </div>
+        <div class="about-content">
+          <span class="section-tag">Authentic Taste &amp; Tradition</span>
+          <h2>The Legacy of Karma Wala Sweets And Bakers</h2>
+          <p>
+            At <strong>Karma Wala Sweets And Bakers</strong>, we blend age-old Pakistani culinary traditions with modern confectionery craftsmanship. Every cake is designed with precision, every patty is layered for optimal flakiness, and every sweet is crafted with pure whole milk and fragrant cardamom.
+          </p>
+          <p>
+            Whether you are celebrating a birthday with our signature chocolate cakes, enjoying a warm weekend breakfast with our Lahori Halwa Puri, or sending festive mithai boxes to family and friends, we guarantee taste, cleanliness, and utmost quality in every bite.
+          </p>
+          <ul class="about-features-list">
+            <li class="about-feature-item"><span class="feature-check">✓</span> 100% Halal Ingredients</li>
+            <li class="about-feature-item"><span class="feature-check">✓</span> Pure Desi Ghee Sweets</li>
+            <li class="about-feature-item"><span class="feature-check">✓</span> Eggless Cakes Available</li>
+            <li class="about-feature-item"><span class="feature-check">✓</span> Customized Message Piping</li>
+            <li class="about-feature-item"><span class="feature-check">✓</span> Fresh Weekend Halwa Puri</li>
+            <li class="about-feature-item"><span class="feature-check">✓</span> Instant WhatsApp Orders</li>
+          </ul>
+          <a href="https://wa.me/923327512031" target="_blank" rel="noopener" class="btn btn-whatsapp btn-lg">
+            Chat with Our Bakery Chef on WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       LIVE VISITOR STATISTICS DASHBOARD (FOOTER)
+       ========================================================================== -->
+  <section class="visitor-stats-dashboard" id="visitorStatsDashboard" aria-label="Live Visitor Statistics">
+    <div class="container">
+      <div class="stats-dashboard-header">
+        <span class="stats-badge-tag">
+          <span class="pulse-dot active"></span> Live Website Traffic
+        </span>
+        <h3 class="stats-title">Customer &amp; Visitor Activity Dashboard</h3>
+        <p class="stats-subtitle">Real-time engagement telemetry tracked in Pakistan Standard Time (Asia/Karachi, UTC+5)</p>
+      </div>
+
+      <!-- 4 Core Metrics Cards -->
+      <div class="stats-cards-grid">
+        <!-- Metric 1: Total Visitors -->
+        <div class="stat-metric-card">
+          <div class="stat-icon-wrap">👥</div>
+          <div class="stat-info-wrap">
+            <span class="stat-number" id="statTotalVisitors">0</span>
+            <span class="stat-label">Total Visitors</span>
+            <span class="stat-subtext">All-time unique browsers</span>
+          </div>
+        </div>
+
+        <!-- Metric 2: Today's Visitors (Resets at 00:00:00 PKT) -->
+        <div class="stat-metric-card">
+          <div class="stat-icon-wrap">📅</div>
+          <div class="stat-info-wrap">
+            <span class="stat-number" id="statTodayVisitors">0</span>
+            <span class="stat-label">Today's Visitors</span>
+            <span class="stat-subtext">Unique visitors today (PKT)</span>
+          </div>
+        </div>
+
+        <!-- Metric 3: Online Visitors (Active in last 5 minutes) -->
+        <div class="stat-metric-card">
+          <div class="stat-icon-wrap">🟢</div>
+          <div class="stat-info-wrap">
+            <span class="stat-number" id="statOnlineVisitors">1</span>
+            <span class="stat-label">Online Visitors</span>
+            <span class="stat-subtext">Active in last 5 minutes</span>
+          </div>
+        </div>
+
+        <!-- Metric 4: Total Page Views -->
+        <div class="stat-metric-card">
+          <div class="stat-icon-wrap">👁️</div>
+          <div class="stat-info-wrap">
+            <span class="stat-number" id="statPageViews">0</span>
+            <span class="stat-label">Total Page Views</span>
+            <span class="stat-subtext">Catalog page interactions</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Stats Meta Information -->
+      <div class="stats-meta-footer">
+        <div class="stats-telemetry-notice">
+          <span>📡</span>
+          <span id="statStatusNotice">Live telemetry syncing via CountAPI &amp; Local Session Deduplication</span>
+        </div>
+        <div class="stats-time-notice">
+          <span>🕒 Pakistan Time: </span>
+          <strong id="statPktTime">Loading PKT...</strong>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       PRIMARY SITE FOOTER
+       ========================================================================== -->
+  <footer class="site-footer" id="contactSection" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        
+        <!-- Brand Summary Column -->
+        <div class="footer-brand-col">
+          <div class="footer-logo-wrap">
+            <img src="assets/images/logo/logo.png" alt="Karma Wala Sweets And Bakers Logo" class="footer-logo-img" />
+            <h3 class="footer-brand-title">Karma Wala Sweets &amp; Bakers</h3>
+          </div>
+          <p class="footer-tagline">"Freshness, Quality &amp; Taste in Every Bite."</p>
+          <p class="footer-desc">
+            Your destination for authentic Pakistani confectionery, birthday cakes, savory tea-time bakery bites, pure desi ghee sweets, and weekend breakfast specials.
+          </p>
+          <div class="footer-social-links">
+            <a href="https://wa.me/923327512031" target="_blank" rel="noopener" class="social-icon-btn" title="WhatsApp" aria-label="WhatsApp">💬</a>
+            <a href="#home" class="social-icon-btn" title="Facebook" aria-label="Facebook">📘</a>
+            <a href="#home" class="social-icon-btn" title="Instagram" aria-label="Instagram">📷</a>
+            <a href="#home" class="social-icon-btn" title="TikTok" aria-label="TikTok">🎵</a>
+          </div>
+        </div>
+
+        <!-- Quick Links Column -->
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul class="footer-links-list">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#catalogSection" onclick="App.setCategory('all')">All Products</a></li>
+            <li><a href="#catalogSection" onclick="App.filterCategoryAndScroll('weekend')">Weekend Halwa Puri</a></li>
+            <li><a href="#catalogSection" onclick="App.filterCategoryAndScroll('cakes')">Custom Birthday Cakes</a></li>
+            <li><a href="#aboutSection">About Our Bakery</a></li>
+            <li><a href="https://wa.me/923327512031" target="_blank" rel="noopener">WhatsApp Inquiries</a></li>
+          </ul>
+        </div>
+
+        <!-- Categories Column -->
+        <div class="footer-col">
+          <h4>Menu Categories</h4>
+          <ul class="footer-links-list">
+            <li><a href="#catalogSection" onclick="App.filterCategoryAndScroll('bakery')">Bakery Items</a></li>
+            <li><a href="#catalogSection" onclick="App.filterCategoryAndScroll('cakes')">Cakes &amp; Pastries</a></li>
+            <li><a href="#catalogSection" onclick="App.filterCategoryAndScroll('mithai')">Traditional Mithai</a></li>
+            <li><a href="#catalogSection" onclick="App.filterCategoryAndScroll('biscuits')">Biscuits &amp; Cookies</a></li>
+            <li><a href="#catalogSection" onclick="App.filterCategoryAndScroll('bread')">Bread &amp; Breakfast</a></li>
+            <li><a href="#catalogSection" onclick="App.filterCategoryAndScroll('other')">Other Delights</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact & Ordering Info Column -->
+        <div class="footer-col">
+          <h4>Order &amp; Contact</h4>
+          <ul class="footer-contact-list">
+            <li class="footer-contact-item">
+              <span class="contact-icon">📱</span>
+              <div>
+                <strong>WhatsApp Ordering:</strong><br />
+                <a href="https://wa.me/923327512031" target="_blank" rel="noopener" style="color: #25D366; font-weight: 700;">+92 332 7512031</a>
+              </div>
+            </li>
+            <li class="footer-contact-item">
+              <span class="contact-icon">📍</span>
+              <div>
+                <strong>Location:</strong><br />
+                Pakistan (PKT, UTC+5)
+              </div>
+            </li>
+            <li class="footer-contact-item">
+              <span class="contact-icon">⏰</span>
+              <div>
+                <strong>Business Hours:</strong><br />
+                Monday – Sunday: 7:00 AM – 11:30 PM PKT
+              </div>
+            </li>
+            <li class="footer-contact-item">
+              <span class="contact-icon">🍳</span>
+              <div>
+                <strong>Weekend Special:</strong><br />
+                Halwa Puri Fresh every Sat &amp; Sun Morning
+              </div>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Copyright Bottom Bar -->
+      <div class="footer-bottom-bar">
+        <p>Copyright &copy; 2026 Karma Wala Sweets And Bakers. All Rights Reserved. Developed by <a href="https://murtuzadeveloper.github.io/" target="_blank" rel="noopener" class="developer-link">https://murtuzadeveloper.github.io/</a></p>
+        <p>Crafted with love for sweet and savory bakery connoisseurs across Pakistan.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       PRODUCT DETAILS & CUSTOMIZATION MODAL
+       ========================================================================== -->
+  <div class="modal-backdrop-layer" id="productCustomModal" role="dialog" aria-modal="true" aria-labelledby="modalProductName">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h3 class="modal-title">Customize Your Bakery Order</h3>
+        <button type="button" class="modal-close-btn" onclick="App.closeProductModal()" aria-label="Close modal">✕</button>
+      </div>
+      <div class="modal-body">
+        
+        <!-- Product Header Summary -->
+        <div class="product-modal-top">
+          <img id="modalProductImg" src="" alt="Product image" class="modal-product-img" />
+          <div class="modal-product-header">
+            <span class="modal-cat-tag" id="modalProductCategory">Category</span>
+            <h2 class="modal-product-name" id="modalProductName">Product Name</h2>
+            <div class="modal-product-price" id="modalProductPrice">Price on Request</div>
+            <p class="modal-product-desc" id="modalProductDesc">Product description goes here.</p>
+          </div>
+        </div>
+
+        <!-- Dynamic Category Customization Fields -->
+        <div id="modalCustomFieldsContainer">
+          <!-- Injected dynamically based on category (Cakes, Mithai, Bakery, Halwa Puri) -->
+        </div>
+
+        <!-- Quantity Selector -->
+        <div class="custom-field-group">
+          <label class="custom-label" for="modalProductQty">Quantity:</label>
+          <div class="quantity-input-group" style="height: 42px;">
+            <button type="button" class="qty-btn" onclick="App.adjustModalQty(-1)" aria-label="Decrease quantity">−</button>
+            <input type="number" id="modalProductQty" class="card-qty-input" value="1" min="1" max="99" style="width: 44px; font-size: 1rem;" />
+            <button type="button" class="qty-btn" onclick="App.adjustModalQty(1)" aria-label="Increase quantity">+</button>
+          </div>
+        </div>
+
+        <!-- Special Instructions / Notes -->
+        <div class="custom-field-group">
+          <label class="custom-label" for="modalProductNotes">Special Instructions or Notes:</label>
+          <textarea 
+            id="modalProductNotes" 
+            class="form-textarea" 
+            rows="2" 
+            placeholder="e.g. Extra crispy, less sugar, pack in gift box, please deliver hot..."
+          ></textarea>
+        </div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline" onclick="App.closeProductModal()">Cancel</button>
+        <button type="button" class="btn btn-primary btn-lg" onclick="App.addConfiguredProductToCart()">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <path d="M16 10a4 4 0 0 1-8 0"></path>
+          </svg>
+          Add to Cart
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       SHOPPING CART SLIDE-OUT DRAWER
+       ========================================================================== -->
+  <div class="cart-backdrop" id="cartBackdrop"></div>
+  <aside class="cart-drawer" id="cartDrawer" role="dialog" aria-modal="true" aria-label="Your Shopping Cart">
+    <div class="cart-drawer-header">
+      <h3 class="cart-drawer-title">
+        <span>🛍️ Your Cart</span>
+        <span id="cartDrawerCount">(0)</span>
+      </h3>
+      <button type="button" class="modal-close-btn" id="cartDrawerClose" aria-label="Close cart">✕</button>
+    </div>
+
+    <!-- Cart Drawer Body -->
+    <div class="cart-drawer-body">
+      <!-- Empty Cart Message -->
+      <div class="products-empty-state hidden" id="cartEmptyState" style="padding: 40px 10px;">
+        <div class="empty-icon">🛒</div>
+        <h4 class="empty-title" style="font-size: 1.25rem;">Your Cart is Empty</h4>
+        <p class="empty-desc">Explore our fresh cakes, mouth-watering mithai, and hot savory bakery items!</p>
+        <button type="button" class="btn btn-primary" onclick="App.closeCartDrawer()">
+          Start Shopping
+        </button>
+      </div>
+
+      <!-- Cart Items List Container -->
+      <div class="cart-items-container" id="cartItemsContainer">
+        <!-- Rendered by cart.js -->
+      </div>
+    </div>
+
+    <!-- Cart Drawer Footer -->
+    <div class="cart-drawer-footer" id="cartFooterSection">
+      <div class="cart-summary-row">
+        <span>Estimated Total:</span>
+        <span class="cart-subtotal-val" id="cartDrawerSubtotal">Price on Request</span>
+      </div>
+      <p class="cart-disclaimer">
+        * Final pricing &amp; fresh availability will be confirmed directly on WhatsApp before payment.
+      </p>
+      <div class="cart-actions-col">
+        <button type="button" class="btn btn-whatsapp btn-lg btn-block" onclick="App.closeCartDrawer(); Checkout.openCheckoutModal();">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.669-.699c.969.586 1.861.948 3.123.948 3.181 0 5.767-2.586 5.768-5.766 0-3.18-2.586-5.766-5.768-5.766zm9.969 5.766c0 5.519-4.481 10-10 10-1.802 0-3.528-.485-5.045-1.341l-6.955 1.82 1.854-6.777c-.966-1.583-1.5-3.432-1.5-5.362 0-5.519 4.481-10 10-10s10 4.481 10 10z"/>
+          </svg>
+          Proceed to WhatsApp Checkout
+        </button>
+        <div style="display: flex; gap: 8px;">
+          <button type="button" class="btn btn-outline btn-block" onclick="App.closeCartDrawer()">Continue Shopping</button>
+          <button type="button" class="btn btn-outline btn-block" onclick="if(confirm('Are you sure you want to clear your cart?')) Cart.clearCart();" style="color: #991B1B;">Clear Cart</button>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ==========================================================================
+       WHATSAPP CHECKOUT MODAL
+       ========================================================================== -->
+  <div class="modal-backdrop-layer" id="checkoutModal" role="dialog" aria-modal="true" aria-labelledby="checkoutModalTitle">
+    <div class="modal-dialog checkout-modal-dialog">
+      <div class="modal-header">
+        <h3 class="modal-title" id="checkoutModalTitle">Complete WhatsApp Order</h3>
+        <button type="button" class="modal-close-btn" onclick="Checkout.closeCheckoutModal()" aria-label="Close checkout">✕</button>
+      </div>
+
+      <div class="modal-body">
+        
+        <!-- Order Items Review Box -->
+        <div id="checkoutOrderReview">
+          <!-- Rendered by checkout.js -->
+        </div>
+
+        <!-- Checkout Form -->
+        <form id="checkoutForm" novalidate>
+          <div class="checkout-grid-form">
+            
+            <!-- Customer Name -->
+            <div>
+              <label class="custom-label" for="checkoutName">Customer Name <span style="color:#B91C1C">*</span></label>
+              <input type="text" id="checkoutName" class="form-input" placeholder="e.g. Muhammad Usman" required />
+            </div>
+
+            <!-- WhatsApp Number -->
+            <div>
+              <label class="custom-label" for="checkoutPhone">WhatsApp / Contact Number <span style="color:#B91C1C">*</span></label>
+              <input type="tel" id="checkoutPhone" class="form-input" placeholder="e.g. 0332-1234567 or +92332..." required />
+            </div>
+
+            <!-- Delivery vs Pickup Selection -->
+            <div class="col-span-full">
+              <label class="custom-label">Order Type:</label>
+              <div class="order-type-toggle-group">
+                <label class="order-type-card">
+                  <input type="radio" name="orderType" id="orderTypeDelivery" value="Delivery" checked />
+                  <span>🛵 Home Delivery</span>
+                </label>
+                <label class="order-type-card">
+                  <input type="radio" name="orderType" id="orderTypePickup" value="Pickup" />
+                  <span>🏪 Self Pickup from Bakery</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Delivery Address Fields -->
+            <div class="col-span-full" id="deliveryAddressGroup">
+              <label class="custom-label" for="checkoutAddress">Delivery Address <span style="color:#B91C1C">*</span></label>
+              <input type="text" id="checkoutAddress" class="form-input" placeholder="House / Flat / Street address" required />
+            </div>
+
+            <div>
+              <label class="custom-label" for="checkoutArea">Area / Sector / City:</label>
+              <input type="text" id="checkoutArea" class="form-input" placeholder="e.g. Model Town, Cantt, Satellite Town" />
+            </div>
+
+            <!-- Preferred Delivery/Pickup Date -->
+            <div>
+              <label class="custom-label" for="checkoutDate">Preferred Date:</label>
+              <input type="date" id="checkoutDate" class="form-input" />
+            </div>
+
+            <!-- Preferred Time Slot -->
+            <div>
+              <label class="custom-label" for="checkoutTime">Preferred Time:</label>
+              <select id="checkoutTime" class="form-select">
+                <option value="Morning (9:00 AM – 12:00 PM)" selected>Morning (9:00 AM – 12:00 PM)</option>
+                <option value="Afternoon (12:00 PM – 4:00 PM)">Afternoon (12:00 PM – 4:00 PM)</option>
+                <option value="Evening (4:00 PM – 8:00 PM)">Evening (4:00 PM – 8:00 PM)</option>
+                <option value="Night (8:00 PM – 11:00 PM)">Night (8:00 PM – 11:00 PM)</option>
+                <option value="As Soon As Possible (ASAP)">As Soon As Possible (ASAP)</option>
+              </select>
+            </div>
+
+            <!-- Payment Method Preference -->
+            <div>
+              <label class="custom-label" for="checkoutPayment">Payment Method Preference:</label>
+              <select id="checkoutPayment" class="form-select">
+                <option value="Cash on Delivery / Pickup" selected>Cash on Delivery / Pickup</option>
+                <option value="JazzCash / Easypaisa Mobile Account">JazzCash / Easypaisa</option>
+                <option value="Online Bank Transfer">Online Bank Transfer</option>
+              </select>
+            </div>
+
+            <!-- General Order Notes -->
+            <div class="col-span-full">
+              <label class="custom-label" for="checkoutNotes">Additional Notes / Instructions:</label>
+              <textarea 
+                id="checkoutNotes" 
+                class="form-textarea" 
+                rows="2" 
+                placeholder="Any special landmark, birthday delivery timing, or packaging preferences..."
+              ></textarea>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="col-span-full" style="margin-top: 10px;">
+              <button type="submit" class="btn btn-whatsapp btn-lg btn-block" style="font-size: 1.1rem; padding: 14px;">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.669-.699c.969.586 1.861.948 3.123.948 3.181 0 5.767-2.586 5.768-5.766 0-3.18-2.586-5.766-5.768-5.766zm9.969 5.766c0 5.519-4.481 10-10 10-1.802 0-3.528-.485-5.045-1.341l-6.955 1.82 1.854-6.777c-.966-1.583-1.5-3.432-1.5-5.362 0-5.519 4.481-10 10-10s10 4.481 10 10z"/>
+                </svg>
+                Confirm Order on WhatsApp (+923327512031)
+              </button>
+              <p style="font-size: 0.8rem; text-align: center; color: var(--color-text-muted); margin-top: 8px;">
+                🔒 No online prepayment required. Your order opens directly in WhatsApp with the bakery staff.
+              </p>
+            </div>
+
+          </div>
+        </form>
+
+        <!-- Order Success State -->
+        <div id="checkoutSuccessState" class="checkout-success-box hidden">
+          <div class="success-icon">🎉</div>
+          <h3 style="font-family: var(--font-serif); font-size: 1.6rem; color: var(--color-primary); margin-bottom: 8px;">
+            Order Dispatched to WhatsApp!
+          </h3>
+          <p style="color: var(--color-text-dark); margin-bottom: 20px;">
+            WhatsApp has opened with your completed bakery order. Please tap <strong>Send</strong> in WhatsApp so our team can immediately confirm fresh preparation and dispatch.
+          </p>
+          <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
+            <button type="button" class="btn btn-whatsapp" onclick="Checkout.processCheckout()">
+              Re-open WhatsApp Message
+            </button>
+            <button type="button" class="btn btn-outline" onclick="Cart.clearCart(); Checkout.closeCheckoutModal(); Checkout.resetCheckoutState();">
+              Clear Cart &amp; Return Home
+            </button>
+            <button type="button" class="btn btn-outline" onclick="Checkout.closeCheckoutModal(); Checkout.resetCheckoutState();">
+              Keep Cart &amp; Continue Browsing
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       MOBILE STICKY ACTION BAR
+       ========================================================================== -->
+  <div class="mobile-sticky-bar" aria-label="Quick Actions">
+    <button type="button" class="mobile-sticky-cart-btn cart-drawer-trigger">
+      <span style="display: flex; align-items: center; gap: 8px;">
+        <span class="mobile-cart-badge cart-badge-count">0</span>
+        <span>View Cart</span>
+      </span>
+      <span id="mobileStickyCartTotal" style="font-weight: 800;">Price on Request</span>
+    </button>
+    <a href="https://wa.me/923327512031" target="_blank" rel="noopener" class="mobile-sticky-wa-btn" title="Quick WhatsApp Order" aria-label="Order on WhatsApp">
+      💬
+    </a>
+  </div>
+
+  <!-- ==========================================================================
+       TOAST NOTIFICATION
+       ========================================================================== -->
+  <div class="app-toast" id="appToast" role="status" aria-live="polite">
+    <span>✅</span>
+    <span id="appToastMessage">Item added to cart!</span>
+    <span class="toast-view-cart cart-drawer-trigger">View Cart</span>
+  </div>
+
+  <!-- ==========================================================================
+       JAVASCRIPT MODULES & SCRIPTS (Relative Paths for GitHub Pages)
+       ========================================================================== -->
+  <script src="visitor-counter-config.js"></script>
+  <script src="assets/js/products.js"></script>
+  <script src="assets/js/cart.js"></script>
+  <script src="assets/js/checkout.js"></script>
+  <script src="assets/js/visitor-counter.js"></script>
+  <script src="assets/js/app.js"></script>
+
+</body>
+</html>
+
