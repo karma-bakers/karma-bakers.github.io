@@ -873,13 +873,10 @@
   <!-- ==========================================================================
        BACKGROUND MUSIC PLAYER
        ========================================================================== -->
-  <audio id="bgAudioElement" loop preload="auto" playsinline autoplay>
-    <source src="assets/audio/karma.mp3" type="audio/mpeg">
-    <source src="./assets/audio/karma.mp3" type="audio/mpeg">
-  </audio>
+  <audio id="bgAudioElement" src="assets/audio/karma.mp3" loop preload="auto" playsinline autoplay></audio>
 
   <!-- Ambient music prompt if browser delays unmuted audio -->
-  <div class="bg-music-prompt-banner" id="bgMusicPromptBanner" role="button" tabindex="0" title="Tap to listen to bakery ambient music">
+  <div class="bg-music-prompt-banner" id="bgMusicPromptBanner" role="button" tabindex="0" title="Tap anywhere to start bakery music" aria-label="Play Bakery Background Music">
     <span class="music-note-icon">🎵</span>
     <span>Tap anywhere to start bakery music</span>
     <span class="music-prompt-btn">Play ▶</span>

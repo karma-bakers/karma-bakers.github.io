@@ -1,14 +1,28 @@
 /**
  * KARMA WALA SWEETS AND BAKERS - AMBIENT BACKGROUND MUSIC CONTROLLER
- * Ensures audio plays automatically when page opens and on any first customer gesture.
- * Audio Source: assets/audio/karma.mp3
+ * 
+ * Ensures ambient music plays automatically when the website opens,
+ * complying with modern browser autoplay policies with zero friction.
+ * 
+ * Strategy:
+ * 1. Attempt unmuted playback immediately when page opens.
+ * 2. If browser requires user activation, immediately start stream in muted mode
+ *    and seamlessly unmute with full volume on first customer touch / tap / click.
+ * 3. Provide floating interactive music controls (widget, header toggle, prompt banner).
+ * 
+ * Audio Sources:
+ * - Primary:  assets/audio/karma.mp3
+ * - Fallback: karma.mp3
  */
 
 const MusicPlayer = {
   audio: null,
   isPlaying: false,
   isUnlocked: false,
-  targetVolume: 0.40, // 40% ambient volume
+  targetVolume: 0.40, // 40% ambient bakery volume
+  primarySrc: 'assets/audio/karma.mp3',
+  fallbackSrc: 'karma.mp3',
+  cleanupListeners: null,
 
   elements: {
     widget: null,
@@ -22,19 +36,22 @@ const MusicPlayer = {
     if (!this.audio) {
       this.audio = new Audio();
       this.audio.id = 'bgAudioElement';
-      this.audio.loop = true;
-      this.audio.preload = 'auto';
-      this.audio.setAttribute('playsinline', '');
-      this.audio.setAttribute('autoplay', '');
-      this.audio.src = 'assets/audio/karma.mp3';
       document.body.appendChild(this.audio);
-    } else {
-      this.audio.setAttribute('playsinline', '');
-      this.audio.setAttribute('autoplay', '');
     }
 
+    // Ensure audio configuration
+    if (!this.audio.src || this.audio.src === '' || this.audio.src === window.location.href) {
+      this.audio.src = this.primarySrc;
+    }
+
+    this.audio.loop = true;
+    this.audio.preload = 'auto';
+    this.audio.setAttribute('playsinline', '');
+    this.audio.setAttribute('webkit-playsinline', '');
+    this.audio.setAttribute('autoplay', '');
     this.audio.volume = this.targetVolume;
 
+    // Cache UI elements
     this.elements.widget = document.getElementById('bgMusicWidget');
     this.elements.headerBtn = document.getElementById('headerMusicToggle');
     this.elements.statusText = document.getElementById('bgMusicStatusText');
@@ -42,10 +59,10 @@ const MusicPlayer = {
 
     this.bindEvents();
 
-    // 1. Attempt immediate autoplay as soon as page opens
+    // 1. Attempt immediate playback as soon as the page opens
     this.attemptImmediateAutoplay();
 
-    // 2. Set up comprehensive gesture unlockers on window, document and body
+    // 2. Set up universal gesture unlock for touch, click, pointer
     this.setupGestureUnlock();
   },
 
@@ -68,34 +85,39 @@ const MusicPlayer = {
       });
     }
 
-    // Banner click starts music immediately
+    // Prompt Banner click to play immediately
     if (this.elements.banner) {
       this.elements.banner.addEventListener('click', (e) => {
         e.preventDefault();
         e.stopPropagation();
-        this.play();
-        this.hidePromptBanner();
+        this.forcePlay();
       });
     }
 
     // Native audio state events
     this.audio.addEventListener('play', () => {
-      this.isPlaying = true;
-      this.isUnlocked = true;
-      this.updateUI(true);
-      this.hidePromptBanner();
+      if (!this.audio.muted) {
+        this.isPlaying = true;
+        this.isUnlocked = true;
+        this.updateUI(true);
+        this.hidePromptBanner();
+      }
     });
 
     this.audio.addEventListener('playing', () => {
-      this.isPlaying = true;
-      this.isUnlocked = true;
-      this.updateUI(true);
-      this.hidePromptBanner();
+      if (!this.audio.muted) {
+        this.isPlaying = true;
+        this.isUnlocked = true;
+        this.updateUI(true);
+        this.hidePromptBanner();
+      }
     });
 
     this.audio.addEventListener('pause', () => {
-      this.isPlaying = false;
-      this.updateUI(false);
+      if (!this.audio.muted) {
+        this.isPlaying = false;
+        this.updateUI(false);
+      }
     });
 
     this.audio.addEventListener('ended', () => {
@@ -103,35 +125,47 @@ const MusicPlayer = {
       this.audio.play().catch(() => {});
     });
 
-    // Fallback if audio error occurs (e.g. resolve absolute path)
-    this.audio.addEventListener('error', (e) => {
-      console.warn('Audio source reload attempt with absolute origin path', e);
-      if (!this.audio.src.includes(window.location.origin)) {
-        this.audio.src = window.location.origin + '/assets/audio/karma.mp3';
+    // Fallback if primary source network fails
+    let fallbackTried = false;
+    this.audio.addEventListener('error', () => {
+      if (!fallbackTried) {
+        fallbackTried = true;
+        console.warn('Primary audio failed, switching to root fallback:', this.fallbackSrc);
+        this.audio.src = this.fallbackSrc;
         this.audio.load();
-        this.play();
+        this.attemptImmediateAutoplay();
       }
     });
   },
 
   /**
-   * Attempt immediate playback as soon as the page opens
+   * Attempt immediate playback when the page opens
    */
   attemptImmediateAutoplay() {
+    this.audio.muted = false;
     this.audio.volume = this.targetVolume;
 
     const promise = this.audio.play();
     if (promise !== undefined) {
       promise
         .then(() => {
-          console.info('✓ Audio autoplay succeeded immediately on page open.');
+          // Autoplay unmuted succeeded!
+          console.info('✓ Bakery music started unmuted automatically on page open');
           this.isPlaying = true;
           this.isUnlocked = true;
           this.updateUI(true);
           this.hidePromptBanner();
         })
         .catch((err) => {
-          console.info('Browser policy deferred unmuted audio until customer interaction:', err.message);
+          console.info('Browser autoplay policy deferred unmuted sound:', err.message);
+          // Start playing MUTED so audio preloads and buffer is ready
+          this.audio.muted = true;
+          this.audio.play()
+            .then(() => {
+              console.info('✓ Audio streaming in background; ready to unmute on first gesture');
+            })
+            .catch(() => {});
+
           this.isPlaying = false;
           this.updateUI(false);
           this.showPromptBanner();
@@ -140,65 +174,61 @@ const MusicPlayer = {
   },
 
   /**
-   * Comprehensive unlock listeners on EVERY customer gesture:
-   * click, touchstart, touchend, pointerdown, mousedown, scroll, wheel, keydown
+   * Unmutes and plays music on the VERY FIRST customer touch / click anywhere on the page
    */
   setupGestureUnlock() {
-    const gestureEvents = [
-      'click',
-      'touchstart',
-      'touchend',
-      'pointerdown',
-      'mousedown',
-      'scroll',
-      'wheel',
-      'keydown'
-    ];
+    const activationEvents = ['pointerdown', 'touchstart', 'click', 'keydown'];
 
     const unlockHandler = () => {
-      if (this.isPlaying || this.isUnlocked) return;
-
-      this.audio.volume = this.targetVolume;
-      const playPromise = this.audio.play();
-
-      if (playPromise !== undefined) {
-        playPromise
-          .then(() => {
-            console.info('✓ Audio unlocked via customer interaction gesture.');
-            this.isPlaying = true;
-            this.isUnlocked = true;
-            this.updateUI(true);
-            this.hidePromptBanner();
-            cleanup();
-          })
-          .catch(() => {});
-      }
+      if (this.isUnlocked && this.isPlaying && !this.audio.muted) return;
+      this.forcePlay();
+      if (this.cleanupListeners) this.cleanupListeners();
     };
 
-    const cleanup = () => {
-      gestureEvents.forEach(evt => {
+    this.cleanupListeners = () => {
+      activationEvents.forEach((evt) => {
         window.removeEventListener(evt, unlockHandler, { capture: true });
         document.removeEventListener(evt, unlockHandler, { capture: true });
+        if (document.body) {
+          document.body.removeEventListener(evt, unlockHandler, { capture: true });
+        }
       });
     };
 
-    gestureEvents.forEach(evt => {
-      window.addEventListener(evt, unlockHandler, { capture: true, passive: true, once: false });
-      document.addEventListener(evt, unlockHandler, { capture: true, passive: true, once: false });
+    activationEvents.forEach((evt) => {
+      window.addEventListener(evt, unlockHandler, { capture: true, passive: true });
+      document.addEventListener(evt, unlockHandler, { capture: true, passive: true });
+      if (document.body) {
+        document.body.addEventListener(evt, unlockHandler, { capture: true, passive: true });
+      }
     });
   },
 
-  play() {
+  /**
+   * Force unmuted playback
+   */
+  forcePlay() {
     if (!this.audio) return;
+    this.audio.muted = false;
     this.audio.volume = this.targetVolume;
-    this.audio.play()
-      .then(() => {
-        this.isPlaying = true;
-        this.isUnlocked = true;
-        this.updateUI(true);
-        this.hidePromptBanner();
-      })
-      .catch((err) => console.log('Playback error:', err.message));
+
+    const promise = this.audio.play();
+    if (promise !== undefined) {
+      promise
+        .then(() => {
+          this.isPlaying = true;
+          this.isUnlocked = true;
+          this.updateUI(true);
+          this.hidePromptBanner();
+        })
+        .catch((err) => {
+          console.warn('Playback gesture retry needed:', err.message);
+        });
+    }
+  },
+
+  play() {
+    this.forcePlay();
   },
 
   pause() {
@@ -209,15 +239,15 @@ const MusicPlayer = {
   },
 
   toggle() {
-    if (this.isPlaying) {
+    if (this.isPlaying && !this.audio.muted) {
       this.pause();
     } else {
-      this.play();
+      this.forcePlay();
     }
   },
 
   showPromptBanner() {
-    if (this.elements.banner && !this.isPlaying) {
+    if (this.elements.banner && (!this.isPlaying || this.audio.muted)) {
       this.elements.banner.classList.add('visible');
     }
   },
@@ -245,6 +275,7 @@ const MusicPlayer = {
   }
 };
 
+// Global export for inline and module scripts
 if (typeof window !== 'undefined') {
   window.MusicPlayer = MusicPlayer;
 }
