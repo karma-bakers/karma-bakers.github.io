@@ -2612,8 +2612,52 @@ input, select, textarea {
 }
 
 /* ==========================================================================
-   FLOATING BACKGROUND MUSIC WIDGET
+   FLOATING BACKGROUND MUSIC WIDGET & PROMPT BANNER
    ========================================================================== */
+.bg-music-prompt-banner {
+  position: fixed;
+  top: 92px;
+  left: 50%;
+  transform: translateX(-50%) translateY(-10px);
+  background: linear-gradient(135deg, #2D1114 0%, #18080A 100%);
+  color: #FFF6EC;
+  border: 1.5px solid var(--color-gold);
+  border-radius: var(--radius-full);
+  padding: 8px 18px;
+  display: none;
+  align-items: center;
+  gap: 10px;
+  z-index: 1000;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.45);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  opacity: 0;
+  transition: all 0.35s ease;
+}
+
+.bg-music-prompt-banner.visible {
+  display: inline-flex;
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
+  animation: pulseBanner 2.2s infinite alternate ease-in-out;
+}
+
+@keyframes pulseBanner {
+  0% { box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4); }
+  100% { box-shadow: 0 8px 28px rgba(212, 175, 55, 0.45); border-color: #FFE082; }
+}
+
+.music-prompt-btn {
+  background: var(--color-gold);
+  color: #2D1114;
+  padding: 3px 10px;
+  border-radius: var(--radius-full);
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+}
+
 .bg-music-widget {
   position: fixed;
   bottom: 24px;
